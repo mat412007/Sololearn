@@ -7,12 +7,12 @@
 // If the function has to return a value, it ends with the return command and it's defined by the type of avule it returns
 // If we return a value with a function, we can assign it to a variable
 void greet(){
-    print("Hello\n");
+    printf("Hello\n");
     printf("How are you?");
 }
-int sum(int x, int y){
-    int suma = x + y;
-    return suma;
+void greet(char* name){
+    printf("Hello\n");
+    printf("How are you? %s", name);
 }
 
 
@@ -71,7 +71,7 @@ scanf("%d", &num);
 // > < != == <= >=
 if(num == 10){printf("Perfect");}
 else if(num < 10){printf("Almost perfect");}
-else{print("Could be better");}
+else{printf("Could be better");}
 // We also have the switch statement, also used for conditions
 // Case holds the possible value and what to do under that condition
 // Each case must have the break statement to terminate the switch
