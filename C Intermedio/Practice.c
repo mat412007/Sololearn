@@ -1,28 +1,36 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
-  int id;
-  char title[40];
-  float hours; 
-} course;
+struct student{
+    char name[50];
+    int id;
+};
 
-void update_course(course *class);
-void display_course(course class);
-
-int main() {
-  course cs2;
-  update_course(&cs2);
-  display_course(cs2);
-  return 0;
+void fill(struct student *item){
+        printf("Tell me the name of the student: ");
+        scanf("%s", item->name);
+        printf("And the id: ");
+        scanf("%d", &item->id);
+        printf("\n");
 }
 
-void update_course(course *class) {
-  strcpy(class->title, "C++ Fundamentals");
-  class->id = 111;
-  class->hours = 12.30;
+void print(struct student item){
+    printf("-----------------------------\n");
+    printf("Name: %s\n", item.name);
+    printf("ID: %d\n", item.id);
 }
 
-void display_course(course class) {
-  printf("%d\t%s\t%3.2f\n", class.id, class.title, class.hours);
+int main(){
+    struct student students[3];
+    int size = sizeof(students) / sizeof(students[0]);
+    printf("Size: %d\n", size);
+    for(int i = 0; i < size; i++){
+        fill(&students[i]);
+    }
+    printf("\n");
+    for(int i = 0; i < size; i++){
+        print(students[i]);
+    }
+    printf("\nThis is the end");
+    return 0;
 }
