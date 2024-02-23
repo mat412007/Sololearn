@@ -138,13 +138,13 @@ fgets(name2, 50, stdin);
 // The address of a variable can be accessed with the & operator
 // 
 int age = 24;
-int* p = &age;
-printf("%p", &age); // These printf output the same thing
-printf("%p", p);
-printf("%d", *p); // Outputs the value of age
+int *p = &age;
+printf("%p\n", &age); // These printf output the same thing
+printf("%p\n", p);
+printf("%d\n", *p); // Outputs the value of age
 // The name of an array is actually a pointer to it0s first element
 int x[] = {1, 2, 3, 4, 5};
-int* p = x;
+int *p = x;
 printf("%d", *p); // Outputs 1
 
 }

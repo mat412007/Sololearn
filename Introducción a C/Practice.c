@@ -33,5 +33,19 @@ int main(int argc, char *argv[]){
     for(int i = 1; i <= 10; i++){
         printf("%d ", i);
     }
+    printf("\n\n");
+    int x = 5;
+    int y = 10;
+    int *px = &x;
+    int *py = &y;
+    printf("%d\n", *px); // 5
+    printf("%p\n", px); // address
+    sum(px, py, x, y);
+    printf("%d %d", x, y);
     return 0;
+}
+
+void sum(int *x, int *y, int a, int b){
+    *x = b;
+    *y = a;
 }
