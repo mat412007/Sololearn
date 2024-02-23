@@ -2,6 +2,35 @@
 #include <stdlib.h>
 #include <string.h>
 
+struct student{
+  char name[50];
+  int number;
+  int age;
+};
+// Struct pointer as a function parameter
+void showStudentData(struct student *st) {
+  printf("\nStudent:\n");
+  printf("Name: %s\n", st->name);
+  printf("Number: %d\n", st->number);
+  printf("Age: %d\n", st->age);
+}
+
+typedef struct {
+  int id;
+  char title[40];
+  float hours; 
+} course;
+void update_course(course *class) {
+  strcpy(class->title, "C++ Fundamentals");
+  class->id = 111;
+  class->hours = 12.30;
+}
+void display_course(course class) {
+  printf("%d\t%s\t%3.2f\n", class.id, class.title, class.hours);
+}
+void update_course(course *class);
+void display_course(course class);
+
 int main(int argc, char *argv[]){
 // A structure is a user-defined data type that groups related variables of different data types, these are called members
 struct course { // defines data type named course with 3 members
@@ -43,6 +72,41 @@ circle c = {4.5, {1, 3}};
 int radio = c.radius;
 int x = c.center.x;
 int y = c.center.y;
+// Structures can also have pointers:
+/*
+struct myStruct *struct_ptr;
+defines a pointer to the myStruct structure.
+
+struct_ptr = &struct_var;
+stores the address of the structure variable struct_var in the pointer struct_ptr.
+
+struct_ptr -> struct_mem;
+accesses the value of the structure member struct_mem.
+*/
+// The -> operator allows to access members of the struct though the pointer.
+// (*st).age is the same as st->age.
+// Also, when a typedef has been used to name the struct, then a pointer is declared using only the typedef name along with * and the pointer name.
+struct student st1 = {"Krishna", 5, 21};
+showStudentData(&st1);
+// Structures can also be function parameters
+course cs2;
+update_course(&cs2);
+display_course(cs2);
+// Arrays of Structures
+typedef struct {
+  int h;
+  int w;
+  int l;
+} box;
+box boxes[3] = {{2, 6, 8}, {4, 6, 6}, {2, 6, 9}};
+int k, volume;
+//After declaring an array of structures, an element is accessible with the index number. 
+for (k = 0; k < 3; k++) {
+  volume = boxes[k].h*boxes[k].w*boxes[k].l;
+  printf("box %d volume %d\n", k, volume);
+}
+
+
 
     return 0;
 }
