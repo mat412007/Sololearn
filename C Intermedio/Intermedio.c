@@ -32,6 +32,7 @@ void update_course(course *class);
 void display_course(course class);
 
 // A function can have union parameters that accept arguments by value when a copy of the union variable is all that is needed. 
+// For a function to change the actual value in a union memory location, pointer parameters are required. 
 union id {
   int id_num;
   char name[20]; 
@@ -190,11 +191,96 @@ for (k = 0; k < 10; k++) {
 for (k = 0; k < 10; k++) {
   printf("%d  ", nums[k].int_num);
 }
-
 union val arr[3];
 arr[0].int_num = 42;
 arr[1].fl_num = 3.14;
 
+// Working with memory
+// When you declare a variable using a basic data type, C automatically allocates space for the variable in an area of memory called the stack. 
+// An int variable is allocated 4 bytes when declared
+// sizeof show the size of the variable
+int x;
+printf("%ld", sizeof(x)); // 4
+int arr[10];
+printf("%ld", sizeof(arr)); // 40
+// Dynamic memory allocation is the process of allocating and freeing memory as needed.
+// Dynamic memory is managed with pointers that point to newly allocated blocks of memory in an area called the heap.
+// For this we use the stdlib.h library it gives access to multiple function to manage memory
+/*
+- malloc(bytes) allocates a specified number of contiguous bytes in memory and returns a pointer to the allocated memory.
+The allocated memory is contiguous and can be treated as an array, and pointer arithmetic is used to traverse the array.
+If the allocation is unsuccessful, NULL is returned.  
+*/
+int *pt = malloc(10 * sizeof(*pt)); // a block of 10 ints
+if (pt != NULL) {
+  *(pt + 2) = 50;  /* assign 50 to third int */
+}
+printf("%d\n", *(ptr + 2));
+free(ptr); // You free memory to make more available for later
+/*
+- calloc(num_items, item_size) Returns a pointer to a contiguous block of memory that has num_items items, each of size item_size bytes. Typically used for arrays, structures, and other derived data types. The allocated memory is initialized to 0.*/
+typedef struct {
+  int num;
+  char *info;
+} record;
 
+record *recs;
+int num_recs = 2;
+int k;
+char str[ ] = "This is information";
+
+recs = calloc(num_recs, sizeof(record)); // allocates blocks of memory within a contiguous block of memory for an array of structure elements.
+if (recs != NULL) {
+  for (k = 0; k < num_recs; k++) {
+    (recs+k)->num = k;
+    (recs+k)->info = malloc(sizeof(str)); // allocates memory for the string
+    strcpy((recs+k)->info, str); // inserts the string on the info member
+  }
+}
+/*
+- realloc(ptr, bytes) expands a current block to include additional memory. It leaves the original content in memory and expands the block to allow for more storage.*/
+int *pr;
+pr = malloc(10 * sizeof(*pr));  
+if (pr != NULL) {
+  *(pr + 2) = 50;  /* assign 50 to third int */
+}
+pr = realloc(pr, 100 * sizeof(*pr)); 
+*(pr + 30) = 75;
+/*
+- free(ptr)  Releases the block of memory pointed to by ptr. 
+*/
+// Dynamic Strings
+// Allocating memory for a string:
+char str20[20];
+char *m = NULL;
+strcpy(str20, "12345"); // Insert string in str20
+m = malloc(strlen(str20) + 1); // strlen() return the length of a string, we add 1 extra because of the NULL character '\0'
+strcpy(m, str20); // Insert the value of str20 inside m
+printf("%s", m); 
+
+// Dynamic Arrays
+// This allows the number of elements to grow as needed
+typedef struct {
+  int *elements;
+  int size;
+  int cap;
+} dyn_array;
+
+dyn_array ar;
+/* initialize array */
+ar.size = 0;
+ar.elements = calloc(1, sizeof(*ar.elements) );
+ar.cap = 1;  /* room for 1 element */
+/*To expand by more elements:*/
+ar.elements = realloc(ar.elements, (5 + ar.cap) * sizeof(*ar.elements));
+if (ar.elements != NULL)
+  ar.cap += 5; /* increase capacity */
+/*Adding an element to the array increases its size*/
+if (ar.size < ar.cap) {
+  ar.elements[ar.size] = 50;
+  ar.size++;
+} else {
+  printf("Need to expand the array.");
+}
     return 0;
 }
