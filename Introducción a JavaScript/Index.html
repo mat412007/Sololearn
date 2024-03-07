@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <img src="./Images/Components.png" onclick='src="./Images/JS.jpg"' width="400px">
+    <br>
+    <button onclick="console.log('Hello')">Press here</button>
+    <br>
+    <h2>Practice Form</h2>
+    <form action="">
+        <!--We connect labels and inputs with for and id-->
+        <label for="nombre">What's your name? </label>
+        <!--The name attribute is required to store data correctly-->
+        <input type="text" id="nombre" name="name">
+        <br>
+        <h4>How old are you?</h4>
+        <input type="radio" name="edad" id="pequeño">
+        <label for="pequeño">Pequeño</label>
+        <br>
+        <input type="radio" name="edad" id="adolescente">
+        <label for="adolescente">Adolescente</label>
+        <br>
+        <input type="radio" name="edad" id="adulto">
+        <label for="adulto">Adulto</label>
+        <h4>What languages do you know?</h4>
+        <input type="checkbox" name="lenguajes" id="c">
+        <label for="c">C</label>
+        <br>
+        <input type="checkbox" name="lenguajes" id="html">
+        <label for="html">HTML</label>
+        <br>
+        <input type="checkbox" name="lenguajes" id="css">
+        <label for="css">CSS</label>
+        <br>
+        <input type="checkbox" name="lenguajes" id="js">
+        <label for="js">JavaScript</label>
+        <br>
+        <input type="checkbox" name="lenguajes" id="python">
+        <label for="python">Python</label>
+        <br><br>
+        <!--A submit button is frequently used to send the data in the form to a database-->
+        <input type="submit" value="Send">
+    </form>
+    <script src="Introduccion.js"></script>
+</body>
+</html>
