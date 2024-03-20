@@ -330,3 +330,101 @@ function validate() {
 </form>
 // The form will not get submitted if its onsubmit event returns false
 
+// ECMAScript
+// ECMAScript (ES) is a scripting language specification created to standardize JavaScript
+/*
+The Sixth Edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015, adds significant new syntax for writing complex applications, including classes and modules, iterators and for/of loops, generators, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies.
+In other words, ES6 is a superset of JavaScript (ES5). The reason that ES6 became so popular is that it introduced new conventions and OOP concepts such as classes
+*/
+
+// ES6 Variables and Strings
+// In ES6 we have three ways of declaring variables
+var a = 10;
+const b = 'hello';
+let c = true;
+// The type of declaration used depends on the necessary scope. Scope is the fundamental concept in all programming languages that defines the visibility of a variable
+/*
+- var & let
+Unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope, let allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used.
+- const 
+const variables have the same scope as variables declared using let. The difference is that const variables are immutable - they are not allowed to be reassigned
+*/
+function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2;  // same variable
+    console.log(x);  // 2
+  }
+  console.log(x);  // 2
+}
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // different variable
+    console.log(x);  // 2
+  }
+  console.log(x);  // 1
+}
+// Template literals are a way to output variables in the string. Prior to ES6 we had to break the string
+/* Pior */
+let n = 'David';
+let msg = 'Welcome ' + n + '!';
+/* ES6 */
+let n2 = 'David';
+let msg2 = `Welcome ${n2}!`;
+// Template literals are enclosed by the backtick ( ` ) character instead of double or single quotes. The ${expression} is a placeholder, and can include any expression, which will get evaluated and inserted into the template literal
+
+// Loops and Functions in ES6
+// The for...in loop is intended for iterating over the enumerable keys of an object
+let obj = {a: 1, b: 2, c: 3};
+for (let v in obj) {
+  console.log(v); // a b c
+}
+let arr = [1, 2, 3];
+for (let i in arr) {
+  console.log(arr[i]); // 1 2 3
+}
+// ES6 introduces the new for...of loop, which creates a loop iterating over iterable objects
+let list = ["x", "y", "z"];
+for (let val of list) {
+  console.log(val); // x y z
+}
+for (let ch of "Hello") {
+  console.log(ch); // H e l l o
+}
+// ES6 introduces a new syntax for writing functions
+/* Prior */
+function add(x, y) {
+  var sum = x+y;  
+  console.log(sum);
+}
+/* ES6 */
+const add = (x, y) => {
+  let sum = x + y;  
+  console.log(sum);
+}
+// You can skip typing function and return, as well as some parentheses and braces
+const x = () => alert("Hi");
+const greet = x => "Welcome " + x;
+// Let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element
+/* Prior */
+arr = [2, 3, 7, 8];
+arr.forEach(function(el) {
+  console.log(el * 2);
+});
+/* ES6 */
+arr = [2, 3, 7, 8];
+arr.forEach(v => {
+  console.log(v * 2);
+});
+// In ES6, we can put the default parameters right in the signature of the functions
+/* Prior */
+function test(a, b = 3, c = 42) {
+  return a + b + c;
+}
+/* ES6 */
+const test = (a, b = 3, c = 42) => {
+  return a + b + c;
+}
+console.log(test(5)); //50
+
