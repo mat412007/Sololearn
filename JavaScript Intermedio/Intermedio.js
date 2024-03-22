@@ -587,4 +587,193 @@ var mergedObj = merge(obj1, obj2);
 var mergedObj2 = merge({}, obj1, obj2);
 // { 0: {}, 1: { foo: 'bar', x: 42 }, 2: { foo: 'baz', y: 5 } }
 
+// ES6 Classes
+// A class can be used to create multiple objects of the same structure. 
+// A class uses the keyword class and contains a constructor method for initializing. The constructor is a special method which is used for creating and initializing an object created with a class.There can be only one constructor in each class
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+var square = new Rectangle(5, 5);
+var poster = new Rectangle(2, 3); 
+// You can also define a class with a class expression, where the class can be named or unnamed
+var Square = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+// In the unnamed class expression, a variable is simply assigned the class definition
+var Square = class {
+  constructor(height, width) {
+   this.height = height;
+   this.width = width;
+ }
+};
+// Class Methods in ES6
+// ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // get represents the method that can be accessed
+  get area() { // You do not use the function keyword
+    return this.calcArea();
+  }
+  calcArea() { // You do not use the function keyword
+    return this.height * this.width;
+  }
+}
+const square = new Rectangle(5, 5);
+console.log(square.area); // 25
+// Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application
+// The static distance method is called directly using the class name, without an object
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+p1 = new Point(7, 2);
+p2 = new Point(3, 8);
+console.log(Point.distance(p1, p2));
+// Inheritance in ES6
+// The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+let dog = new Dog('Rex');
+dog.speak(); // Rex barks.
+// If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+class Dog extends Animal {
+  speak() {
+    super.speak(); // Super
+    console.log(this.name + ' barks.');
+  }
+}
+dog = new Dog('Rex');
+dog.speak();
 
+// ES6 Map and Set
+// ES6 Map
+// A Map object can be used to hold key/value pairs. A key or value in a map can be anything (objects and primitive values
+// The syntax new Map([iterable]) creates a Map object where iterable is an array or any other iterable object whose elements are arrays (with a key/value pair each)
+/*
+An Object is similar to Map but there are important differences that make using a Map preferable in certain cases:
+1) The keys can be any type including functions, objects, and any primitive.
+2) You can get the size of a Map.
+3) You can directly iterate over Map.
+4) Performance of the Map is better in scenarios involving frequent addition and removal of key/value pairs.
+*/
+// The size property returns the number of key/value pairs in a map
+let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+console.log(map.size); // 2
+/* 
+Methods
+- set(key, value) Adds a specified key/value pair to the map. If the specified key already exists, value corresponding to it is replaced with the specified value.
+
+- get(key) Gets the value corresponding to a specified key in the map. If the specified key doesn't exist, undefined is returned.
+
+- has(key) Returns true if a specified key exists in the map and false otherwise.
+
+- delete(key) Deletes the key/value pair with a specified key from the map and returns true. Returns false if the element does not exist.
+
+- clear() Removes all key/value pairs from map.
+
+- keys() Returns an Iterator of keys in the map for each element.
+
+- values() Returns an Iterator of values in the map for each element.
+
+- entries() Returns an Iterator of array[key, value] in the map for each element.
+*/
+map = new Map();
+map.set('k1', 'v1').set('k2', 'v2');
+console.log(map.get('k1')); // v1
+console.log(map.has('k2')); // true
+for (let kv of map.entries())
+  console.log(kv[0] + " : " + kv[1]);
+// ES6 Set
+// A Set object can be used to hold unique values (no repetitions are allowed). A value in a set can be anything (objects and primitive values)
+// The syntax new Set([iterable]) creates a Set object where iterable is an array or any other iterable object of values
+// The size property returns the number of distinct values in a set
+let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+console.log(set.size); // 5
+/*
+Methods
+- add(value) Adds a new element with the given value to the Set.
+
+- delete(value) Deletes a specified value from the set.
+
+- has(value) Returns true if a specified value exists in the set and false otherwise.
+
+- clear() Clears the set.
+
+- values() Returns an Iterator of values in the set.
+*/
+set = new Set();
+set.add(5).add(9).add(59).add(9);
+console.log(set.has(9));
+for (let v of set.values()) // Examinates an array with th values
+  console.log(v);
+
+// More on ES6
+// ES6 Promises
+// A Promise is a better way for asynchronous programming when compared to the common way of using a setTimeout() type of method
+setTimeout(function() { // Executes the code inside of it after a certain lapse of milliseconds
+  console.log("Work 1");
+  setTimeout(function() {
+    console.log("Work 2");
+  }, 1000);
+}, 1000);
+console.log("End"); // End Work1 Work2
+// ES6 comes to the rescue in such situations. A promise can be created as follows
+// Here, resolve is the method for success and reject is the method for failure.
+// If a method returns a promise, its calls should use the then method which takes two methods as input; one for success and the other for the failure
+function asyncFunc(work) {
+  return new Promise(function(resolve, reject) {
+    if (work === "")
+      reject(Error("Nothing"));
+    setTimeout(function() {
+      resolve(work);
+    }, 1000);
+  });
+}
+asyncFunc("Work 1") // Task 1
+.then(function(result) {
+  console.log(result);
+  return asyncFunc("Work 2"); // Task 2
+}, function(error) {
+  console.log(error);
+})
+.then(function(result) {
+  console.log(result);
+}, function(error) {
+  console.log(error);
+});
+console.log("End");
