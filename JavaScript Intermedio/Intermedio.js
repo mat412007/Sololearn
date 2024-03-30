@@ -777,3 +777,54 @@ asyncFunc("Work 1") // Task 1
   console.log(error);
 });
 console.log("End");
+// Modules
+// It is a good practice to divide your related code into modules. ES6 is now supporting this feature natively.
+// Considerations:
+/*
+- The first consideration is maintainability. A module is independent of other modules, making improvements and expansion possible without any dependency on code in other modules.
+- The second consideration is namespacing. In an earlier lesson, we talked about variables and scope. As you know, vars are globally declared, so it's common to have namespace pollution where unrelated variables are accessible all over our code. Modules solve this problem by creating a private space for variables.
+- Another important consideration is reusability. When we write code that can be used in other projects, modules make it possible to easily reuse the code without having to rewrite it in a new project.
+*/
+// lib/math.js
+export let sum = (x, y) => { return x + y; }
+export let pi = 3.14;
+// app.js
+import * as math from "lib/math"
+console.log(`2p = + ${math.sum(math.pi, math.pi)}`)
+// Built-in Methods
+// ES6 also introduced new built-in methods to make several tasks easier
+/*
+- Array Element Finding 
+The legacy way to find the first element of an array by its value and a rule was the following:
+The new syntax is cleaner and more robust:
+You can also get the index of the item above by using the findIndex() method:
+*/
+[4, 5, 1, 8, 2, 0].filter(function (x) {
+  return x > 3;
+})[0];
+[4, 5, 1, 8, 2, 0].find(x => x > 3);
+[4, 5, 1, 8, 2, 0].findIndex(x => x > 3);
+/*
+- Repeating Strings 
+Before ES6 the following syntax was the correct way to repeat a string multiple times:
+With the new syntax, it becomes:
+*/
+console.log(Array(3 + 1).join("foo")); // foofoofoo
+console.log("foo".repeat(3)); // foofoofoo
+/*
+- Searching Strings 
+Before ES6 we only used the indexOf() method to find the position of the text in the string. For example:
+ES6 has replaced this with a version that has cleaner and more simplified syntax:
+*/
+"SoloLearn".indexOf("Solo") === 0; // true
+"SoloLearn".indexOf("Solo") === (4 - "Solo".length); // true
+"SoloLearn".indexOf("loLe") !== -1; // true
+"SoloLearn".indexOf("olo", 1) !== -1; // true
+"SoloLearn".indexOf("olo", 2) !== -1; // false
+/*-----------------*/
+"SoloLearn".startsWith("Solo", 0); // true
+"SoloLearn".endsWith("Solo", 4); // true
+"SoloLearn".includes("loLe"); // true
+"SoloLearn".includes("olo", 1); // true
+"SoloLearn".includes("olo", 2); // false
+
