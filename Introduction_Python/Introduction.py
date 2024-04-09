@@ -49,4 +49,25 @@ print(Suma + Resta)
 # - Snake case is a popular way to create variable names using underscores _ to separate words in the variable name
 # - A variable name can contain numbers, but can't start with a number
 # 7-----------------
+# Computer programs are designed to interact with the user and the outside world
+# An input is any information that goes into the computer, like clicking a button
+# The input() instruction is the easiest way to allow the user to insert a value into your program
+message = input()
+# An output is a way for the computer to communicate with the outside world, like a message displayed on the screen
+print(message)
+# Computer programs can have multiple inputs and outputs
+# 8-----------------
+# Computers treat different types of data in many different ways
+# The main data types are strings and numbers
+# - Strings are pieces of text
+# - There also are different types of numbers:
+#   - Integers: whole numbers without a decimal point
+#   - Float: numbers with decimal places
+String = "Text"
+Integer = 10
+Float = 7.50
+# The way computers operate with values depends on the data type
+# Whe you use the + addition sign on strings, they are joined together, they concatenate
+print("Iron" + "Man")
+# 9-------------------
 # 
