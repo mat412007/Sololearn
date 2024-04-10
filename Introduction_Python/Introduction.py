@@ -68,6 +68,20 @@ Integer = 10
 Float = 7.50
 # The way computers operate with values depends on the data type
 # Whe you use the + addition sign on strings, they are joined together, they concatenate
+# The division of two integers always produces a float
+# Any math operation between an integer and a float always produces a float
 print("Iron" + "Man")
 # 9-------------------
-# 
+# Sometimes, the data you are using can have the wrong type
+# The type() instruction can check the type of data of the value you insert in it
+numeric = 10
+t = type(numeric)
+if t == int:
+    print("Number")
+# The input() always takes a string from the user, no matter what
+# The int() instruction converts any type of value into an integer
+# The float() instruction converts any type of value into a float
+# The str() instruction converts any type of value into a string
+number = float(input())
+print(int(number))
+# 10--------------------
