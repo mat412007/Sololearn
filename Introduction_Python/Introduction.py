@@ -85,3 +85,20 @@ if t == int:
 number = float(input())
 print(int(number))
 # 10--------------------
+# Comparison operations is a type of operation that makes machines make decisions
+# This operations always result in either True of False
+# True of False represent a data type called Boolean
+# - < (less than)
+# - > (more than)
+print(0 < 10)
+# Logical operations are needed for machines to evaluate complex scenarios
+# Comparison operations produce a Boolean value, logical operations take multiple Boolean values and produce a single one out of them
+# - The "and" operation is True when all the valuea are
+# - The "or" operation is True when any of the values is
+print(True or False)
+# You can also store Boolean values in a variable
+boolean = True
+# You can also combine comparison and logical operations
+print((5 < 4) or True)
+# 11----------------------
+# You control the flow of instructions a computer follows, using 3 techniques: sequencing, iteration and selection
