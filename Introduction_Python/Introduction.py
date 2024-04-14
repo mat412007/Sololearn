@@ -138,5 +138,14 @@ elif age >= 75:
 else:
   print("No discount")
 # 13-------------------------
-# 
-
+# Lists allow you to store a collection of multiple values in a single variable
+# Lists can contain any data type
+# You can access an item in a list using its position or index number
+# Lists are mutable. This means you can change their values even after they've been created
+cart = [
+    "milk", 
+    "eggs", 
+    "apples"
+]
+cart[3] = "banana"
+print(cart[0])
