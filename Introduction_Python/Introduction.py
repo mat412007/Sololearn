@@ -179,7 +179,7 @@ animals[:2] = "Hawk", "Eagle"
 print("I am", 17, "years old") # auto-spaced
 print("Wake" + "board")
 # String functions will enhance your productivity when working with text
-# Functions that only work on certain objects (strings, lists, etc.) are called using dot . notation
+# Functions that only work on any certain object (strings, lists, etc.) are called using dot . notation
 # - .upper() = change the case of a string to all in uppercase 
 # - .lower() = change the case of a string to all in lowercase
 # - .capitalize() = converts the first character of a string to uppercase, while making the remaining characters lowercase
@@ -189,4 +189,37 @@ print("SmartPhone".upper())
 print("SmartPhone".capitalize())
 print("Apple".find("p"))
 # List functions
-# - len() = stands for length, it return the number of items on a list
+# - len() = stands for length, it return the number of items in a list or any sequence
+# - .append() = adds a new item to the end of a list
+# - .insert() = adds an element to a list, at a specific position
+# - .pop() = removes an element from a list by indicating the index
+cars = ["Toyota", "Rolls Royce", "Tesla"]
+print(len(cars))
+cars.append("Bugatti")
+cars.pop(2)
+cars.insert(1, "Ferrari")
+# You will also need to create your own custom functions
+# First you need to define the function, then you can call it as many times as you need
+# Use def followed by a name to define a new function
+# A function might require arguments to complete its tasks. Arguments are put inside the parentheses () following the function name
+# The result of a function can be sent back with the return statement. This is particularly helpful when you need to continue using the result value in your program
+# The execution of the code inside a function ends when a value is returned. Any additional lines of code after the return line will be ignored
+# A function can return multiple values. When a function returns multiple values, they can be stored in multiple variables (on 1 line)
+# Python allows function arguments to have default values. If the function is called without the argument, the argument gets its default value
+def greet(): 
+  print("Hello from a function")
+  print("Have a great day")
+greet()
+def bmi(weight, height):
+    index = weight / (height * height)
+    return index
+print(bmi(60, 1.8))
+def rect(length, width):
+  area = length * width
+  perimeter = 2 * length + 2 * width
+  return area, perimeter
+x, y = rect(50, 100)
+def greet2(name="Guest"):
+  print("Welcome", name)
+greet2() # Welcome Guest
+greet2("John") # Welcome John
