@@ -1,1 +1,4 @@
-print(0 < 10)
+item = "smartwatch"
+print(item)
+item = item.upper()
+print(item)

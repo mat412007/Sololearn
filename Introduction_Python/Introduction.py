@@ -84,6 +84,7 @@ if t == int:
 # The str() instruction converts any type of value into a string
 number = float(input())
 print(int(number))
+print(str(number))
 # 10--------------------
 # Comparison operations is a type of operation that makes machines make decisions
 # This operations always result in either True of False
@@ -147,5 +148,45 @@ cart = [
     "eggs", 
     "apples"
 ]
-cart[3] = "banana"
+cart[0] = "banana"
 print(cart[0])
+# Indexing also works with strings. You can use indexing to access individual characters in a string
+# Strings are immutable, which means that you can’t change the characters in a string
+animal = "Dog"
+print(animal[0])
+# Both lists and strings are Python sequences. Which means that their content is ordered
+# Slicing allows you to extract a portion of a sequence. Starting and stopping indexes are separated by a colon :
+animals = [
+  "cat",
+  "dog",
+  "bird",
+  "hamster"
+]
+print(animals[1:3]) # dog, bird
+# You can omit the starting or stopping index to slice from or until that element
+print(animals[:2]) # cat, dog
+print(animals[1:]) # dog, bird, hamster
+# Python supports "indexing from the end", called negative indexing. This means the last value of a sequence has an index of -1
+print(animals[-1]) # hamster
+print(animals[-3:-1]) # dog, bird
+print(animals[1:-1]) # dog, bird
+animals[:2] = "Hawk", "Eagle"
+# 14--------------------
+# Functions are reusable blocks of code for specific tasks. They help keep your code as short and easy to work with as possible, saving you from repeating code
+# A function contains the code to perform a task. To use this code, you just need to call the function. Example: print(), type(), input(), these are built-in functions
+# Functions require information to be passed in order for the task to be completed. We pass information into functions as arguments. A function can take multiple arguments
+# Functions can take operations as arguments
+print("I am", 17, "years old") # auto-spaced
+print("Wake" + "board")
+# String functions will enhance your productivity when working with text
+# Functions that only work on certain objects (strings, lists, etc.) are called using dot . notation
+# - .upper() = change the case of a string to all in uppercase 
+# - .lower() = change the case of a string to all in lowercase
+# - .capitalize() = converts the first character of a string to uppercase, while making the remaining characters lowercase
+# - .find() = returns the index position of a character (or a pattern of characters) if it is present in a string. It will return -1 if the value can't be found in the string
+print("SmartPhone".lower())
+print("SmartPhone".upper())
+print("SmartPhone".capitalize())
+print("Apple".find("p"))
+# List functions
+# - len() = stands for length, it return the number of items on a list
