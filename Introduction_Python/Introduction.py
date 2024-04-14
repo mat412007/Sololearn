@@ -88,8 +88,12 @@ print(int(number))
 # Comparison operations is a type of operation that makes machines make decisions
 # This operations always result in either True of False
 # True of False represent a data type called Boolean
-# - < (less than)
-# - > (more than)
+# < (less than)
+# > (more than)
+# <= (same of less than)
+# >= (same of more than)
+# == (same)
+# != (different)
 print(0 < 10)
 # Logical operations are needed for machines to evaluate complex scenarios
 # Comparison operations produce a Boolean value, logical operations take multiple Boolean values and produce a single one out of them
@@ -100,5 +104,39 @@ print(True or False)
 boolean = True
 # You can also combine comparison and logical operations
 print((5 < 4) or True)
-# 11----------------------
+# 11---------------------
+#  An algorithm is a set of step-by-step instructions to complete a task, placed in a certain order, they can be represented as:
+# - Flowcharts: help visualize the flow of the algorithm
+# - Pseudocode: a simplified language that is a bit closer to programming language
+# - Natural language
+# 12----------------------
 # You control the flow of instructions a computer follows, using 3 techniques: sequencing, iteration and selection
+# Sequencing:
+#   It means that the computer runs your code in order, from top to bottom
+# Iteration:  
+#   Is about executing an instruction repeatedly, represented as a loop, it helps you make your code simpler
+#   A for loop is used to execute the same instruction over and over again, a specific number of times
+#   The code that gets repeated in any loop must be indented. Indentation is the spaces at the beginning of lines
+for i in range(3):
+  print(i)
+#   While loops are powerful because they can be used even when you don’t know how many iterations will be needed
+#   While loops repeat code while the condition holds true
+#   If you don't change the counter variable after every loop, it creates an infinite loop 
+seats = 300
+while seats > 0:
+  print("Sell ticket")
+  seats = seats - 1
+#   In general, use for loops when you already know the number of iterations, and while loops when there is a condition that needs to be met
+# Selection:
+#   Specifies when to follow each possible path and wich to follow
+#   if-else statements, allow programs to perform different actions based on the conditions
+age = 22
+if age < 18: 
+  print("Junior discount")
+elif age >= 75: 
+  print("Senior discount")
+else:
+  print("No discount")
+# 13-------------------------
+# 
+
