@@ -13,3 +13,33 @@
 # 13 - Lists, Strings, Slicing, Indexing
 # 14 - Functions, arguments, custom functions(def, return), multiple returned values, default values, built-in functions 
 # 14 - string functions(.upper(), .lower(), .capitalize(), .find()), list functions(len(), .append(), insert(), .pop()) 
+
+print("\nHello World")
+if type("text") == str:
+    print("String")
+    
+for i in range(10):
+    print("Phase:", i+1)
+    
+animal = "Dog"
+print(animal[0])
+
+cart = [
+    "milk", 
+    "eggs", 
+    "apples"
+]
+cart[0] = "banana"
+animals = [
+  "cat",
+  "dog",
+  "bird",
+  "hamster"
+]
+print(animals[1:3]) # dog, bird
+print(animals[:2]) # cat, dog
+print(animals[1:]) # dog, bird, hamster
+print(animals[-1]) # hamster
+print(animals[-3:-1]) # dog, bird
+print(animals[1:-1]) # dog, bird
+animals[:2] = "Hawk", "Eagle"
