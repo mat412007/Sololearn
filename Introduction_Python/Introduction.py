@@ -35,6 +35,7 @@ Suma = 10 + 5
 Resta = 10 - 5
 Multiplicacion = 10 * 5 
 Division = 10 / 5
+Rest = 11 % 5
 print(Suma + 10)
 print(Suma + Resta)
 # 5----------------
@@ -63,13 +64,15 @@ print(message)
 # - There also are different types of numbers:
 #   - Integers: whole numbers without a decimal point
 #   - Float: numbers with decimal places
+# - Boolean are values that can be either true of false
 String = "Text"
 Integer = 10
 Float = 7.50
+Boolean = True
 # The way computers operate with values depends on the data type
-# Whe you use the + addition sign on strings, they are joined together, they concatenate
 # The division of two integers always produces a float
 # Any math operation between an integer and a float always produces a float
+# Whe you use the + addition sign on strings, they are joined together, they concatenate
 print("Iron" + "Man")
 # 9-------------------
 # Sometimes, the data you are using can have the wrong type
