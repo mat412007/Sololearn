@@ -84,3 +84,38 @@ hashtags = ["#" + x for x in tags]
 nums = [x for x in range(1,51)]
 nums2 = [x*2 for x in range(1,11)]
 pairs = [x for x in range(51) if x % 2 == 0]
+# 5--------------------------------
+# In programming, bugs and errors are common, regardless of experience level. They can range from minor typos to complex logical errors
+# The computer reads and executes instructions line by line, from top to bottom. The execution of the program will be interrupted at the first error encountered
+# Mistakes in Python can be broadly categorized into two types: bugs and exceptions
+# - Bugs are flaws or mistakes in a program's code, leading to incorrect or unintended behavior. This doesn't necessarily stop the program from running to completion, but it can result in wrong outputs or behaviors. Bugs, often caused by logical errors, can lead to unexpected or incorrect results
+# - Exceptions are another category of mistakes in programming. These are specific errors that occur during a program's execution and interrupt its normal flow when first encountered
+# There are several types of exceptions in Python
+# - The NameError exception is raised when an unknown variable is used
+# - The SyntaxError exception is raised when a syntax mistake in the code is encountered. This could be due to various reasons such as missing punctuation (like commas, parentheses or colons)
+# - The IndexError is raised when you attempt to access an element of an iterable, ordered collection, such as lists and tuples, using an index that is outside its valid range
+# - The TypeError exception is raised when a function is called on a value of an inappropriate type. For example, the len() function can be called only on iterables (like strings, lists, etc.)
+# - The ValueError exception is raised when a function receives a value of the correct type, but the value itself is inappropriate or unacceptable. For example, the int() function can be called on strings, but only when all characters in the string are numerical values
+# 6-----------------------------------
+# Exceptions often arise from a variety of causes, including invalid input, out-of-bounds indices, incompatible type operations, and logical errors in the code. The good news is that exceptions are often predictable, allowing developers to anticipate and handle them effectively
+# Exceptions can often be predictable. To handle them and prevent program failure, you can use a try/except statement.
+# The try block holds code that might cause an exception. If an exception occurs, execution of the try block stops, and the except block is executed, allowing the program to continue running.
+# To handle a specific type of exception, you need to specify it in the except block
+# When you specify only one type of exception to be handled, other types of exceptions will not be covered. If these other exceptions occur, the program execution will fail
+# You can have multiple except blocks to handle each possible exception specifically. As a best practice, it is recommended to output a definitive message for each type of handled exception
+# You can choose not to specify the exception type, which allows handling of any exceptions that may occur. While this approach is easier, the downside is that the error messages may not be as clear and helpful
+# Exceptions are very helpful when your program interacts with user input
+prices = [540, 500, 1000, "985", 475]
+try:
+    total = sum(prices)
+    print(total)
+except:
+    print("Error")
+
+color = "Green"
+try:
+    print(color)
+except NameError:
+    print("Check the variable name")
+except SyntaxError:
+    print("Check the syntax")

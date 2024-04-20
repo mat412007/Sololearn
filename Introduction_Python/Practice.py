@@ -24,6 +24,9 @@ for i in range(10):
 animal = "Dog"
 print(animal[0])
 
+nums = [15, 45, 87, 64]
+print(sum(nums)) # Sum of all the numbers in the list
+
 cart = [
     "milk", 
     "eggs", 
