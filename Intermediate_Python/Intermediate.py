@@ -46,12 +46,41 @@ guests.clear()
 # Another way to access values in a dictionary is through the get() function.It's called on a dictionary using dot . notation and accepts the key as an argument
 # You can get all the values and keys of a dictionary using the values() and keys() functions, respectively
 # The items() function returns all the key:value pairs in a dictionary
+# You can add a new item by providing a new key and assigning a value to it
+# The update() function updates the dictionary with the items from the given argument, a dictionary, if an item is new, it will be added to the original dictionary
+# The pop() function removes the item with the specified key name
+# You can use the in operator to check if a key or a value occurs in a dictionary, to check if a value occurs in a dictionary, you need to use the values() function
+# You can iterate through a dictionary using a for loop. If you loop through a dictionary, it will return the keys. Use the values() function to iterate through the car dictionary's values
 contact = {
     "name": "John",
     "number": 6496426
 }
+contact["age"] = 17
+contact.update({"age":20, "DNI": 45789634})
 print(contact["number"])
 print(contact.get("name"))
 print(contact.keys())
 print(contact.values())
+contact.pop("DNI")
 print(contact.items())
+print("name" in contact)
+print("John" in contact.values())
+for i in contact:
+    print(i)
+for h in contact.values():
+    print(h)
+# 4--------------------------------------
+# Creating lists from scratch can sometimes be time-consuming, requiring you to manually write all the items or iterate through them with a loop
+# List comprehensions are useful shorthands for such operations. They offer a shorter and more readable way to create lists with various settings using just a single line of code
+# - <variable>: the variable that will store the new list
+# - <expression>: an expression performed on each item. If no specific action is needed, the item itself is used
+# - <item>: the current item being processed
+# - <iterable>: any iterable object, such as ranges, lists, strings, tuples, and sets
+# You can use a list as the iterable in a list comprehension
+# You can incorporate a condition into a list comprehension, placed after the iterable
+tags = ["travel", "vacation", "enjoy"]
+capitalized = [x.capitalize() for x in tags]
+hashtags = ["#" + x for x in tags]
+nums = [x for x in range(1,51)]
+nums2 = [x*2 for x in range(1,11)]
+pairs = [x for x in range(51) if x % 2 == 0]
