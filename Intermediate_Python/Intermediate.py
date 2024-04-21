@@ -132,4 +132,20 @@ rate = 15
 if rate < 0 or rate > 10:
     raise ValueError("Invalid Range")
 # 7----------------------------------------
-# 
+# Functional Programming is a paradigm that leverages functions to their fullest potential to write cleaner and more efficient code
+# You can assign a function to a variable and then use it to call the function
+# Functions can take other functions as arguments, these are called Higher-Order Functions. They are particularly useful for processing various functions and returning specific results
+# An important concept in Functional Programming is Pure Functions. A function is called pure if it gives the same result every time you give it the same inputs, and it doesn't affect anything outside of the function. This makes them trustworthy and simpler to understand
+# The function is impure if it depends on any external state that it modifies or that affects its output. This includes changing variables, or altering input arguments. Such dependencies make the function's behavior unpredictable and dependent on the context in which it's run
+def order(plate):
+    return "Your order: " + plate
+def process_order(dish, func):
+    return func(dish)
+delivery = process_order # no need for parenthesis ()
+print(delivery("Spaghetti", order))
+
+def total(price, count): # Pure Function
+    return price * count
+def hashtag(): # Impure function
+  word = input()
+  return '#' + word

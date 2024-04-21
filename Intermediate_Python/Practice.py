@@ -1,8 +1,5 @@
-user = {
-    "name": "Roberto",
-    "age": 18
-}
-
-user["age"] = 21
-print(user["age"])
-print(user.items())
+print()
+def total(price, count):
+    return price * count
+print(total(500, 5))
+print()
