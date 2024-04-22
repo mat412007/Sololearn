@@ -143,9 +143,49 @@ def process_order(dish, func):
     return func(dish)
 delivery = process_order # no need for parenthesis ()
 print(delivery("Spaghetti", order))
-
 def total(price, count): # Pure Function
     return price * count
 def hashtag(): # Impure function
   word = input()
   return '#' + word
+# 8------------------------------------
+# Lambda Expressions are an efficient feature in Python, allowing you to create compact, throwaway functions without needing the formal structure of a standard function definition
+# Lambda expressions are functions without a name that are quick to create and use. They are written in just one line using the lambda keyword, and are often used for small, simple tasks
+# Lambda expressions are called anonymous functions. This means that they don't need a name while being defined
+# Lambda expressions perform a single operation and return a result. They are defined using the lambda keyword, followed by its arguments, a colon, and the expression to perform
+# Lambda expressions can take multiple arguments separated by commas
+# You can provide arguments to lambda expressions on-the-fly by adding them in parentheses immediately after the lambda function. The lambda expression should be also enclosed in parentheses
+def mult(n):
+    return lambda a: a * n, n
+double, n1 = mult(2)
+triple, n2 = mult(3)
+print(double(5)) # 10
+print(triple(5)) # 15
+print(n1) # 2
+print(n2) # 3
+greet = lambda name: "Welcome " + name
+print(greet("Bob"))
+size = lambda width, height: width * height
+print(size(2, 10))
+sum = (lambda x, y: x + y) (5, 7)
+print(sum)
+# 9-----------------------------------
+# Lambda expressions can be used with functions that are specifically designed for processing and transforming iterables
+# The map() function applies a specified function to every element in an iterable, like lists or tuples. It produces a result that can be transformed into a list using the list() function for easy viewing or further use.
+# The map function requires the first argument to be a function and the second argument to be an iterable, always in that order
+# Another valuable aspect of the lambda expressions is their ability to be directly provided to the map function. This eliminates the need to define a regular function explicitly
+# The filter() function is particularly useful for extracting subsets of data that meet certain criteria, and you also have to use the list() function afterwards
+def capitalize(name):
+    return name.capitalize()
+names = ["james", "nicolas", "johnny", "max", "marco"]
+capitalized = map(capitalize, names)
+capitalized = list(capitalized)
+print(capitalized)
+
+numbers = [1, 2, 3, 4, 5]
+doubled = list(map(lambda x: x*2, numbers))
+print(doubled)
+
+names = ["John", "Emma", "Jake", "Rachel", "James"]
+filtered = list(filter(lambda name: name[0] == 'J', names))
+# 

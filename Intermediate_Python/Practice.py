@@ -1,5 +1,5 @@
 print()
-def total(price, count):
-    return price * count
-print(total(500, 5))
+names = ["John", "Emma", "Jake", "Rachel", "James"]
+filtered = filter(lambda name: name[0] == 'J', names)
+print(filtered)
 print()
