@@ -220,4 +220,45 @@ def display_info(**kwargs):
         print(key, ":", value)
 display_info(name="Marco", age="17", city="CABA")
 # 11--------------------------------------
-# 
+# Decorators are special functions that modify or enhance other functions
+# In Python, functions can be nested. This means you can define a function inside another function's body
+# These functions are known as decorators. In the code below, the uppercase() function acts as a decorator, and the wrapper() function represents the modified (or decorated) version of the greet() function
+# You can apply a decorator to a function using the @ sign. It improves the code readability and provides a clean separation between the function and its decoration. When a function with a decorator is called, it automatically includes the behavior defined in the decorator
+# Decorators are a powerful feature, offering a concise, readable, and efficient way to enhance the functionality of existing functions. You can apply the same decorator to several different functions
+
+def outer_function():
+    print("Hello from the outer function")
+    def inner_function():
+        print("Hello from the inner function")
+    inner_function()
+outer_function()
+
+def outer_function():
+    print("Hello from the outer function")
+    def inner_function():
+        return "Hello from the inner function"
+    message = inner_function()
+    return message
+print(outer_function())
+
+def greet():
+    return "Welcome!"
+def uppercase(func):
+    def wrapper():
+        message = func()
+        modified_message = message.upper()
+        return modified_message
+    return wrapper()
+greet_upper = uppercase(greet)
+print(greet_upper)
+
+def uppercase(func):
+    def wrapper():
+        message = func()
+        modified_message = message.upper()
+        return modified_message
+    return wrapper()
+@uppercase 
+def greet():
+    return "Welcome!"
+print(greet)
