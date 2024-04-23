@@ -69,6 +69,8 @@ for i in contact:
     print(i)
 for h in contact.values():
     print(h)
+for key, value in contact.items():
+    print(key, ":", value)
 # 4--------------------------------------
 # Creating lists from scratch can sometimes be time-consuming, requiring you to manually write all the items or iterate through them with a loop
 # List comprehensions are useful shorthands for such operations. They offer a shorter and more readable way to create lists with various settings using just a single line of code
@@ -188,4 +190,34 @@ print(doubled)
 
 names = ["John", "Emma", "Jake", "Rachel", "James"]
 filtered = list(filter(lambda name: name[0] == 'J', names))
+# 10------------------------------------
+# You can modify functions to make them more versatile and prepare them for every possible scenario
+# If the number of arguments of your function is unknown and unpredictable, you can always use an iterable as an argument
+# *args allows you to provide any number of arguments without the need to create a list before calling the function each time
+# *args receives arguments as a tuple, which can be used inside the function
+# You need to use the unpacking operator * before args. This operator informs Python that the argument is an iterable and should be unpacked to receive its values as individual arguments
+# Note that args is just a name. You’re not required to use the name args. You can choose any name that you prefer
+# When defining a function with both regular arguments and *args, the regular arguments must come before *args in the function definition
+# The first line of the function definition, which includes the function name and its parameters, is called function signature
+# Python also allows you to pass keyword arguments using **kwargs. In this case, **kwargs receives arguments in the form of a dictionary, consisting of key:value pairs
+# The ** operator in Python is used to unpack dictionaries into arguments. It enables a function to accept an arbitrary number of keyword arguments, converting these arguments into a dictionary of key:value pairs
+# In a function definition, the order of arguments is important. First, regular arguments are listed, followed by *args for positional arguments, and finally **kwargs for keyword arguments
+def total(*args):
+    result = 0
+    for arg in args:
+        result += arg
+    return result
+print(total(5, 7, 6, 2, 4))
+
+def show_items(category, *items):
+    print("Category: " + category)
+    for item in items:
+        print(item)
+show_items("Electronics", "Laptop", "Smartphone", "Tablet")
+
+def display_info(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+display_info(name="Marco", age="17", city="CABA")
+# 11--------------------------------------
 # 
