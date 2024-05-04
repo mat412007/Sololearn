@@ -45,7 +45,7 @@ function person(name, age) {
 function bornYear() {
   return 2016 - this.age; // The this keyword is used to access the age property of the object, which is going to call the method
 }
-let per = new person("A", 22);
+let p = new person("A", 22);
 console.log(p.yearOfBirth());
 
 // Arrays
