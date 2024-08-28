@@ -56,11 +56,67 @@ class Demo { // En Java, cada línea de código que pueda ejecutarse realmente t
         if(10 == 10){
             System.out.println("Es lo mismo");
         }
+        else if(10 == 10.0){
+            System.out.println("Sigue siendo lo mismo");
+        }
         else{
             System.out.println("No es lo mismo");
         }
+        // Para no tener que identar muchos if dentro uno del otro, usamos operadores logicos(&&, ||, !)
+        if(!(10 == 10)){
+            System.out.println("Condicion invertida");
+        }
+        // Cuando deberías usar muchas declaraciones if-else, puedes usar la declaración switch en su lugar
+        // Puede tener cualquier cantidad de casos(case) y se detiene el llegar al final o al toparse con un break
+        // Si ninguno de los casos aplica, se ejecuta el default
+        int dia = 1;
+        switch(dia){
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Lunes");
+                break;
+            case 3:
+                System.out.println("Martes");
+                break;
+            case 4:
+                System.out.println("Miercoles");
+                break;
+            case 5:
+                System.out.println("Jueves");
+                break;
+            case 6:
+                System.out.println("Viernes");
+                break;
+            case 7:
+                System.out.println("Sabado");
+                break;
+            default:
+                System.out.println("Error");
+                break;
+        }
 
-        
+        // Los bucles te permiten repetir un bloque de código varias veces
+        // Una declaración de bucle while ejecuta repetidamente una declaración objetivo mientras su condición sea verdadera
+        // Deben tener un contador que aumenta(++) o disminuye(--) en cada bucle para que no sea infinito
+        // Todos los bucles se pueden romper con break, tambien se puede saltar a la proxima iteración con el continue
+        // Tambien esta el do-while
+        // La condición del do-while esta al final del bucle, por lo que las declaraciones del bucle se ejecutan una vez antes de ser probadas
+        int contador = 10;
+        do{
+            System.out.println(contador);
+            contador--;
+        } while (contador != 0);
+        // Otro tipo de bucle es el for
+        // Tiene 3 partes; variable counter, condicion, alque se ejecuta en cada repeticion
+        for(int x = 1; x <= 10; x++){
+            if(x % 2 != 0){
+                continue;
+            }
+            System.out.println(x);
+        }
+
     }
 }
 
