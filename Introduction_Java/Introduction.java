@@ -134,7 +134,20 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         }
         // Java proporciona otra version del bucle for, el bucle for-each, para hacer un bucle sobre las matrices
         for(int a : ages_2){
-            System.out.println(x);
+            System.out.println(a);
+        }
+        // Las matrices pueden tener varias dimensiones (o numero de indices), una matriz puede contener otras matrices
+        // Los dos índices de la matriz se llaman índice de fila e índice de columna.
+        int[][] sample = { 
+            {1, 2, 3}, 
+            {4, 5, 6} 
+        };
+        System.out.println(sample[1][2]);
+        // Para recorrer una matriz asi, necesitamos varios bucles
+        for(int x = 0; x < sample.length; x++){
+            for(int y = 0; y < sample[x].length; y++){
+                System.out.println(sample[x][y]);
+            }
         }
 
     }
