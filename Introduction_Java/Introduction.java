@@ -29,13 +29,13 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         System.out.println("I am a method");
         System.out.println("End of method");
     }
-    // Los métodos pueden tener parámetros, que se pueden utilizar en tu codigo, pueden utilizarse como variables en el metodo
+    // Los metodos pueden tener parametros, que se pueden utilizar en tu codigo, pueden utilizarse como variables en el metodo
     static void welcome_2(String name, int age) {
         System.out.println("Welcome, " + name);
         System.out.println("Your age: " + age);
     }
     // En algunos casos no necesitamos generar el resultado, sino que necesitamos asignarlo a una variable
-    // En estos casos, necesitamos que nuestro método devuelva el valor del resultado
+    // En estos casos, necesitamos que nuestro metodo devuelva el valor del resultado
     // Para hacerlo tenemos que cambiar la palabra void por el tipo de valor que debemos retornar
     // Para devolver un valor usamos la palabra clave return
     static int suma(int a, int b){
@@ -50,7 +50,7 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         // Cada linea de programacion realiza una tarea especifica y se llaman declaraciones
         // Java distingue entre mayusculas y minusculas, System no es lo mismo que system
         // El texto se encierra en comillas dobles, los numeros no
-        // Una variable permite almacenar un valor asignándolo a un nombre
+        // Una variable permite almacenar un valor asignandole un nombre
         // Cada variable tiene un tipo
         String nombre = "Marco"; // Palabras
         int numero = 10; // Numeros enteros
@@ -64,12 +64,18 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         // Ahora creamos un objeto Scanner: (Scanner in = new Scanner(System.in);)
         Scanner in = new Scanner(System.in);
         // Hay diferentes tipos de declaraciones para insertar diferentes tipos de datos
-        nombre = in.nextString();
+        System.out.print("Inserta el nombre: ");
+        nombre = in.nextLine();
+        System.out.print("Inserta el numero: ");
         numero = in.nextInt();
+        System.out.print("Inserta el decimal: ");
         decimal = in.nextDouble();
+        System.out.print("Inserta el decimal 2: ");
         decimal_2 = in.nextFloat();
-        caracter = in.next();
-        verdadero = in.Boolean();
+        System.out.print("Inserta el caracter: ");
+        caracter = in.nextLine().charAt(0);
+        System.out.print("Inserta el booleano: ");
+        verdadero = in.nextBoolean();
 
         // Las declaraciones condicionales se utilizan para realizar diferentes acciones bajo ciertas circunstancias diferentes
         // La declaracion if es una de las declaraciones condicionales mas utilizadas
@@ -89,7 +95,7 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         if(!(10 == 10)){
             System.out.println("Condicion invertida");
         }
-        // Cuando deberias usar muchas declaraciones if-else, puedes usar la declaración switch en su lugar
+        // Cuando deberias usar muchas declaraciones if-else, puedes usar la declaracion switch en su lugar
         // Puede tener cualquier cantidad de casos(case) y se detiene el llegar al final o al toparse con un break
         // Si ninguno de los casos aplica, se ejecuta el default
         int dia = 1;
@@ -160,7 +166,7 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
             System.out.println(a);
         }
         // Las matrices pueden tener varias dimensiones (o numero de indices), una matriz puede contener otras matrices
-        // Los dos índices de la matriz se llaman índice de fila e índice de columna.
+        // Los dos indices de la matriz se llaman indice de fila e indice de columna.
         int[][] sample = { 
             {1, 2, 3}, 
             {4, 5, 6} 
@@ -177,7 +183,6 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         welcome_2("Marco", 17);
         System.out.println(suma(10, 5));
 
-        
     }
 }
 
