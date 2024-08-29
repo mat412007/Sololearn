@@ -19,6 +19,29 @@ java class_name
 import java.util.Scanner;
 // -----------------------------------------------------------
 class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tiene que estar dentro de una class (clase), con cualquier nombre
+
+    // Un metodo es un bloque de codigo disenado para realizar una tarea concreta
+    // Puedes definir tus propios metodos para realizar las tareas que desees
+    // Despues de definir el metodo, llamarlo escribiendo su nombre seguido de un conjunto de parentesis
+    // Puedes llamar un metodo tantas veces como necesites, es codigo reusable
+    static void welcome() { // static es necesario para usar el metodo en el main, y void significa que no retorna nada
+        System.out.println("Welcome");
+        System.out.println("I am a method");
+        System.out.println("End of method");
+    }
+    // Los métodos pueden tener parámetros, que se pueden utilizar en tu codigo, pueden utilizarse como variables en el metodo
+    static void welcome_2(String name, int age) {
+        System.out.println("Welcome, " + name);
+        System.out.println("Your age: " + age);
+    }
+    // En algunos casos no necesitamos generar el resultado, sino que necesitamos asignarlo a una variable
+    // En estos casos, necesitamos que nuestro método devuelva el valor del resultado
+    // Para hacerlo tenemos que cambiar la palabra void por el tipo de valor que debemos retornar
+    // Para devolver un valor usamos la palabra clave return
+    static int suma(int a, int b){
+        return a + b;
+    }
+
     public static void main(String[] args) { // main es el punto de entrada o partida para cualquier aplicacion de Java, contiene el codigo que se ejecuta cuando ejecutamos el programa
         System.out.print("\n");
         System.out.println("Hello"); // println imprime una salida con un salto de linea al final
@@ -150,6 +173,11 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
             }
         }
 
+        welcome();
+        welcome_2("Marco", 17);
+        System.out.println(suma(10, 5));
+
+        
     }
 }
 
