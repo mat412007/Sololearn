@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Front-end para Principiantes</title>
+    <style>
+        body{
+            background-color: #000000;
+            color: yellow;
+        }
+        p{
+            color: #FF0000;
+        }
+        p b{
+            color: blue;
+        }
+        a{
+            color: lightblue;
+        }
+        h2.encabezado2 {
+            color: green;
+        }
+        h1, h2 {
+            text-decoration: underline wavy gray; /*Algunas propiedades de CSS toman más de un valor*/
+        }
+        th{
+            text-transform: uppercase; /*Define mayuscula, minuscula o capitalizado*/
+        }
+        #parrafo{
+            color: red; 
+            text-align: center; 
+            border: 1px solid red;
+            font-size: 30px;
+            text-shadow: 3px -2px #ff9b9b; /* text-shadow: horizontal vertical*/
+        }
+        label:hover{
+            text-decoration: underline;
+        }
+        tr:nth-child(2){ /*Para seleccionar elementos decendientes basandonos en su orden (odd, even)*/
+            color: #FF0000;
+        }
+        input[type="text"]{ /*Seleccionamos el input con el atributo especificado*/
+            border: 1px solid red;
+        }
+        /*
+        rgb = red, green, blue
+        hex = 1 to 9 and A to F
+        */
+    </style>
+</head>
+<body>
+    <h1>Front-End para Principiantes</h1>
+    <h2 class="encabezado2">Esto es un heading de nivel de importancia 2</h2>
+    <nav>
+        <a href="#parrafo">Estos son links de navegación</a> <br>
+        <a href="">Estos son links de navegación</a> <br>
+        <a href="">Estos son links de navegación</a>
+    </nav>
+    <p id="parrafo">Esto es un parrafo</p>
+    <!--
+    The property border is a simple and shorter way to refer:
+    border-width, border-style, border-color
+    -->
+    <button onclick="alert('Mensaje de alerta')">Botón</button> <br>
+    <img src="URL" alt="Esto es una imagen" width="" height="">
+    <p>
+        <b>Esto es texto resaltado</b><br>
+        <i>Esto es texto itálico</i><br>
+        <u>Esto es texto subrayado</u> <br>
+        <a href="" target="_blank">Esto es un hipervinculo</a>
+    </p>
+    <ol style="list-style-type: decimal;">
+        <li>Lista ordenada</li>
+        <li>Lista ordenada</li>
+        <li>Lista ordenada</li>
+    </ol>
+    <ul style="list-style: square inside none;"> <!--Propiedad para estilar listas-->
+        <li>Lista no ordenada</li>
+        <li>Lista no ordenada</li>
+        <li>Lista no ordenada</li>
+    </ul>
+    <form action="">
+        <label for="texto">Ingresa texto: <input type="text" id="texto" name="texto"></label> <br> <!--Conectados mediante el id y el for-->
+        <label for="radio">Radio button: <input type="radio" id="radio" name="radio" value="radio-button"></label> <br> <!--Value y name son qué y donde guardar la info enviada-->
+        <label for="box">Multiple choice: <input type="checkbox" id="box" name="box" value="checkbox"></label> <br>
+        <label for="email">Email: <input type="email" id="email"></label> <br>
+        <label for="contrseña">Contraseña: <input type="password" id="contrseña"></label> <br>
+        <label for="telefono">Teléfono: <input type="tel" id="telefono"></label> <br>
+        <label for="opcion">Opción: </label> <!-- Conexión mediante for e id -->
+        <select name="opcion" id="opcion">
+            <option value="1">Opción 1</option>
+            <option value="2" selected>Opción 2</option> <!-- Opción preseleccionada -->
+            <option value="3">Opción 3</option>
+        </select> <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <video src="" controls> <!--You can display play/pause, volume and other video controls with the controls attribute.-->              
+        <source src="" type="">  <!--The <source> empty tag provides the location and format of the video file-->
+        <source src="" type=""> <!--The src attribute specifies the URL of the video file.-->
+        Video no compatible     <!--The type attribute specifies the format of the video file.-->
+    </video>      
+    <audio src="" controls autoplay muted loop> <!--Atributos de video y audio extras-->
+        <source src="" type="">
+        <source src="" type="">
+        Audio no compatible
+    </audio>
+
+    <header></header>
+    <main></main>
+    <footer></footer>
+    <div>
+        <article></article> <!--represents a self-contained, independent piece of content-->
+        <section></section> <!--is used to divide content into parts-->
+        <aside></aside> <!--is used for secondary, additional or somehow related content-->
+    </div>
+    <table style="border: solid; border-collapse: collapse;"> <!--border-collapse elimina los bordes dobles-->
+        <tr>
+            <th style="border: 1px solid">Encabezado</th>
+            <th style="border: 1px solid">Encabezado</th>
+            <th style="border: 1px solid">Encabezado</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid">Celda</td>
+            <td style="border: 1px solid">Celda</td>
+            <td style="border: 1px solid">Celda</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid">Celda</td>
+            <td style="border: 1px solid">Celda</td>
+            <td style="border: 1px solid">Celda</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -182,7 +182,7 @@ class Demo { // En Java, cada linea de codigo que pueda ejecutarse realmente tie
         welcome();
         welcome_2("Marco", 17);
         System.out.println(suma(10, 5));
-
+        in.close();
     }
 }
 
