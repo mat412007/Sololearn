@@ -1,4 +1,4 @@
-package Intermediate_Java;
+package Intermediate_Java; 
 
 /*
 Each object has three dimensions: identity, attributes, and behavior.
@@ -95,6 +95,92 @@ The Java API Documentation with all of the available APIs can be located on the 
 http://docs.oracle.com/javase/7/docs/api/
 Once you locate the package you want to use, you need to import it into your code.
 
+Exceptions:
+An exception is a problem that occurs during program execution. Exceptions cause abnormal termination of the program.
+Exception handling is a powerful mechanism that handles runtime errors to maintain normal application flow.
+Exceptions can be caught using a combination of the try and catch keywords.
+The Exception type can be used to catch all possible exceptions.
+
+The throw keyword allows you to manually generate exceptions from your methods.
+Like: IndexOutOfBoundsException, IllegalArgumentException, ArithmeticException, and so on.
+
+Thread.sleep(1000);
+
+Runtime vs Checked Exceptions
+
+ArrayList
+One such class is the ArrayList. Standard Java arrays are of a fixed length, which means that after they are created, they cannot expand or shrink.
+On the other hand, ArrayLists are created with an initial size, but when this size is changed, the collections changes too.
+ArrayList class is in the java.util package, so it's necessary to import it before using it.
+ArrayList<String> colors = new ArrayList<String> (10);
+ArrayList<Integer> numbers = new ArrayList<Integer> (5);
+- The add() method adds new objects to the ArrayList. 
+- The remove() method removes objects from the ArrayList.
+- contains(): Returns true if the list contains the specified element
+- get(int index): Returns the element at the specified position in the list
+- size(): Returns the number of elements in the list
+- clear(): Removes all of the elements from the list
+
+LinkedList:
+You can easily change an ArrayList to a LinkedList by changing the object type.
+You cannot specify an initial capacity for the LinkedList.
+This list is  slower, but also manipulative and flexible
+You can iterate over it with a loop
+
+Hashmap
+HashMap is used for storing data collections as key and value pairs. One object is used as a key (index) to another object (the value). 
+The put, remove, and get methods are used to add, delete, and access values in the HashMap.
+HashMap<String, Integer> points = new HashMap<String, Integer>();
+points.add("Enzo", 10);
+A HashMap cannot contain duplicate keys. Adding a new item with a key that already exists overwrites the old element.
+The HashMap class provides containsKey and containsValue methods that determine the presence of a specified key or value.
+
+Sets:
+A Set is a collection that cannot contain duplicate elements. It models the mathematical set abstraction.
+HashSet<String> set = new HashSet<String>();
+
+Sorting Lists:
+For the manipulation of data in different collection types, the Java API provides a Collections class, which is included in the java.util package.
+One of the most popular Collections class methods is sort(), which sorts the elements of your collection type. The methods in the Collections class are static, so you don't need a Collections object to call them.
+Collection.sort(animals);
+Other useful methods in the Collections class:
+- max(Collection c): Returns the maximum element in c as determined by natural ordering.
+- min(Collection c): Returns the minimum element in c as determined by natural ordering.
+- reverse(List list): Reverses the sequence in list.
+- shuffle(List list): Shuffles (i.e., randomizes) the elements in list.
+
+Iterators:
+An Iterator is an object that enables to cycle through a collection, obtain or remove elements. 
+Before you can access a collection through an iterator, you must obtain one. 
+Each of the collection classes provides an iterator() method that returns an iterator to the start of the collection. 
+By using this iterator object, you can access each element in the collection, one element at a time.
+The Iterator class provides the following methods:
+- hasNext(): Returns true if there is at least one more element; otherwise, it returns false.
+- next(): Returns the next object and advances the iterator.
+- remove(): Removes the last object that was returned by next from the collection.
+Iterator<Integer> it = list.iterator();
+
+Files:
+The java.io package includes a File class that allows you to work with files.
+To start, create a File object and specify the path of the file in the constructor.
+With the exists() method, you can determine whether a file exists.
+The getName() method returns the name of the file.
+File file = new File("...");
+
+Reading a File:
+Files are useful for storing and retrieving data, and there are a number of ways to read from a file.
+One of the simplest ways is to use the Scanner class from the java.util package.
+The constructor of the Scanner class can take a File object as input.
+Scanner sc = new Scanner(file);
+The Scanner class inherits from the Iterator, so it behaves like one. We can use the Scanner object's next() method to read the file's contents.
+sc.hasNext();sc.next();
+The next() method returns each word separately.
+
+Creating & Writting Files:
+Formatter, another useful class in the java.util package, is used to create content and write it to files.
+Once the file is created, you can write content to it using the same Formatter object's format() method.
+Formatter f = new Formatter("test.txt");
+f.format("%s", "Hello");
 */
 
 abstract class Animal{ /*Creo una clase */
@@ -142,7 +228,7 @@ class Cat extends Animal{
     }
 }
 
-public class Main {
+public class Apunte {
     public static final double PI = 3.1415;
     public static void main(String args[]){
         System.out.println();
@@ -157,3 +243,4 @@ public class Main {
         System.out.println(dog.getGenero());
     }
 }
+
